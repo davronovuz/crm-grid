@@ -1,0 +1,409 @@
+/* ==========================================
+   QADAM 2: RANGLAR — bir joyda saqlaymiz
+   ========================================== */
+:root {
+  --bg: #f4f3ef;      /* sahifa foni */
+  --white: #ffffff;   /* kartalar */
+  --black: #141414;   /* matn va sidebar */
+  --gray: #8b8a85;    /* kulrang matn */
+  --line: #e4e2dc;    /* chiziqlar */
+  --lime: #d6f25e;    /* urg'u rangi */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+  background: var(--bg);
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ==========================================
+   QADAM 3: SAHIFA XARITASI — grid-template-areas
+   ========================================== */
+.app {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: 80px 1fr 60px;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  min-height: 100vh;
+}
+
+.sidebar { grid-area: sidebar; }
+.header  { grid-area: header; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+
+/* ==========================================
+   QADAM 4: SIDEBAR
+   ========================================== */
+.sidebar {
+  background: var(--black);
+  padding: 25px 15px;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 35px;
+  padding-left: 12px;
+}
+
+.logo span {
+  color: var(--lime);
+}
+
+.menu a {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--gray);
+}
+
+.menu a i {
+  width: 25px;
+}
+
+.menu a:hover {
+  color: var(--white);
+}
+
+.menu a.active {
+  background: var(--lime);
+  color: var(--black);
+}
+
+/* ==========================================
+   QADAM 5: HEADER
+   ========================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--line);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 10px 16px;
+  width: 300px;
+  color: var(--gray);
+}
+
+.search input {
+  border: none;
+  outline: none;
+  margin-left: 8px;
+  width: 100%;
+  font-size: 15px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--lime);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================
+   QADAM 6: MAIN va SARLAVHA
+   ========================================== */
+.main {
+  padding: 30px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.title p {
+  color: var(--gray);
+}
+
+.title h1 {
+  font-size: 44px;
+}
+
+.btn {
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  padding: 13px 22px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--lime);
+  color: var(--black);
+}
+
+/* ==========================================
+   QADAM 7: DASHBOARD — ichki grid-template-areas
+   ========================================== */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 18px;
+  grid-template-areas:
+    "stat1   stat2   stat3   stat4"
+    "chart   chart   chart   tasks"
+    "clients clients clients clients";
+}
+
+.stat1   { grid-area: stat1; }
+.stat2   { grid-area: stat2; }
+.stat3   { grid-area: stat3; }
+.stat4   { grid-area: stat4; }
+.chart   { grid-area: chart; }
+.tasks   { grid-area: tasks; }
+.clients { grid-area: clients; }
+
+/* ==========================================
+   QADAM 8: KARTALAR
+   ========================================== */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.card p {
+  color: var(--gray);
+}
+
+.card h2 {
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.card h3 {
+  margin-bottom: 20px;
+}
+
+.card small {
+  background: var(--bg);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* Birinchi karta — qora */
+.stat1 {
+  background: var(--black);
+  color: var(--white);
+}
+
+.stat1 h2 {
+  color: var(--lime);
+}
+
+.stat1 small {
+  background: #2a2a2a;
+}
+
+/* ==========================================
+   QADAM 9: DIAGRAMMA
+   ========================================== */
+.bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 14px;
+  align-items: end;
+  height: 190px;
+}
+
+.bar div {
+  background: var(--black);
+  border-radius: 10px;
+}
+
+.bar .today {
+  background: var(--lime);
+}
+
+.bar span {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* ==========================================
+   QADAM 10: VAZIFALAR
+   ========================================== */
+.task {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.task i {
+  margin-right: 8px;
+  color: var(--line);
+}
+
+.task.done {
+  color: var(--gray);
+  text-decoration: line-through;
+}
+
+.task.done i {
+  color: var(--black);
+}
+
+/* ==========================================
+   QADAM 11: MIJOZLAR RO'YXATI
+   Har bir qator — 4 ustunli kichik grid
+   ========================================== */
+.row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  padding: 14px 10px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.row.head {
+  color: var(--gray);
+  border-bottom: 1px solid var(--line);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.badge.green {
+  background: var(--lime);
+}
+
+.badge.black {
+  background: var(--black);
+  color: var(--white);
+}
+
+.badge.gray {
+  background: var(--bg);
+  color: var(--gray);
+}
+
+/* ==========================================
+   QADAM 12: FOOTER
+   ========================================== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  color: var(--gray);
+  border-top: 1px solid var(--line);
+}
+
+.social a {
+  color: var(--gray);
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.social a:hover {
+  color: var(--black);
+}
+
+/* ==========================================
+   QADAM 13: RESPONSIVE — faqat xaritani o'zgartiramiz
+   ========================================== */
+
+/* Planshet: kartalar 2 ustun */
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "stat1   stat2"
+      "stat3   stat4"
+      "chart   chart"
+      "tasks   tasks"
+      "clients clients";
+  }
+}
+
+/* Telefon: hammasi 1 ustun, sidebar yashirin */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 60px;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "stat1"
+      "stat2"
+      "stat3"
+      "stat4"
+      "chart"
+      "tasks"
+      "clients";
+  }
+
+  .header,
+  .main,
+  .footer {
+    padding: 15px;
+  }
+
+  .search {
+    width: 170px;
+  }
+
+  .user b {
+    display: none;
+  }
+
+  .title h1 {
+    font-size: 30px;
+  }
+
+  .row {
+    font-size: 13px;
+  }
+}

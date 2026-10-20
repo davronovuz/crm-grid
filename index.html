@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar CRM</title>
+
+  <!-- Font Awesome — ikonkalar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts — shrift -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- QADAM 1: butun sahifa — bitta katta div -->
+  <div class="app">
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar">
+      <div class="logo">daftar<span>.</span></div>
+
+      <div class="menu">
+        <a href="#" class="active"><i class="fa-solid fa-house"></i> Bosh sahifa</a>
+        <a href="#"><i class="fa-solid fa-user-group"></i> Mijozlar</a>
+        <a href="#"><i class="fa-solid fa-handshake"></i> Bitimlar</a>
+        <a href="#"><i class="fa-solid fa-list-check"></i> Vazifalar</a>
+        <a href="#"><i class="fa-solid fa-chart-simple"></i> Hisobotlar</a>
+        <a href="#"><i class="fa-solid fa-sliders"></i> Sozlamalar</a>
+      </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <div class="header">
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Qidirish...">
+      </div>
+
+      <div class="user">
+        <i class="fa-regular fa-bell"></i>
+        <div class="avatar">AK</div>
+        <b>Aziz K.</b>
+      </div>
+    </div>
+
+    <!-- ========== MAIN ========== -->
+    <div class="main">
+
+      <div class="title">
+        <div>
+          <p>Seshanba, 20 oktabr</p>
+          <h1>Salom, Aziz</h1>
+        </div>
+        <button class="btn"><i class="fa-solid fa-plus"></i> Mijoz qo'shish</button>
+      </div>
+
+      <!-- QADAM 7: main ichida yana bitta grid -->
+      <div class="dashboard">
+
+        <!-- 4 ta statistika kartasi -->
+        <div class="card stat1">
+          <p><i class="fa-solid fa-user-group"></i> Mijozlar</p>
+          <h2>1284</h2>
+          <small>+12% shu oy</small>
+        </div>
+
+        <div class="card stat2">
+          <p><i class="fa-solid fa-dollar-sign"></i> Daromad</p>
+          <h2>48.2k</h2>
+          <small>+8% shu oy</small>
+        </div>
+
+        <div class="card stat3">
+          <p><i class="fa-solid fa-handshake"></i> Bitimlar</p>
+          <h2>86</h2>
+          <small>-3% shu oy</small>
+        </div>
+
+        <div class="card stat4">
+          <p><i class="fa-solid fa-list-check"></i> Vazifalar</p>
+          <h2>24</h2>
+          <small>6 tasi bugun</small>
+        </div>
+
+        <!-- Diagramma -->
+        <div class="card chart">
+          <h3>Haftalik sotuvlar</h3>
+          <div class="bars">
+            <div class="bar"><div style="height: 70px"></div><span>Du</span></div>
+            <div class="bar"><div style="height: 110px" class="today"></div><span>Se</span></div>
+            <div class="bar"><div style="height: 90px"></div><span>Ch</span></div>
+            <div class="bar"><div style="height: 150px"></div><span>Pa</span></div>
+            <div class="bar"><div style="height: 125px"></div><span>Ju</span></div>
+            <div class="bar"><div style="height: 55px"></div><span>Sh</span></div>
+            <div class="bar"><div style="height: 35px"></div><span>Ya</span></div>
+          </div>
+        </div>
+
+        <!-- Vazifalar -->
+        <div class="card tasks">
+          <h3>Bugun</h3>
+          <div class="task done"><i class="fa-solid fa-square-check"></i> Malikaga qo'ng'iroq</div>
+          <div class="task"><i class="fa-regular fa-square"></i> Taklifnoma yuborish</div>
+          <div class="task"><i class="fa-regular fa-square"></i> Shartnoma tayyorlash</div>
+          <div class="task done"><i class="fa-solid fa-square-check"></i> Hisobotni tekshirish</div>
+        </div>
+
+        <!-- Mijozlar ro'yxati (har bir qator — kichik grid) -->
+        <div class="card clients">
+          <h3>Oxirgi mijozlar</h3>
+
+          <div class="row head">
+            <div>Ism</div>
+            <div>Kompaniya</div>
+            <div>Summa</div>
+            <div>Holat</div>
+          </div>
+
+          <div class="row">
+            <div>Malika Yusupova</div>
+            <div>Orient Tech</div>
+            <div>$2 400</div>
+            <div><span class="badge green">Faol</span></div>
+          </div>
+
+          <div class="row">
+            <div>Bekzod Aliyev</div>
+            <div>Smart Market</div>
+            <div>$1 150</div>
+            <div><span class="badge black">Kutilmoqda</span></div>
+          </div>
+
+          <div class="row">
+            <div>Dilnoza Rahimova</div>
+            <div>EduCenter</div>
+            <div>$3 900</div>
+            <div><span class="badge green">Faol</span></div>
+          </div>
+
+          <div class="row">
+            <div>Sardor Tursunov</div>
+            <div>BuildPro</div>
+            <div>$780</div>
+            <div><span class="badge gray">Bekor</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <div class="footer">
+      <p>© 2026 daftar CRM</p>
+      <div class="social">
+        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
